@@ -1122,7 +1122,7 @@ A classe `Scanner` oferece diversos métodos úteis que já realizam a conversã
 
 Abaixo, um exemplo prático interagindo com o usuário para preencher um cadastro simples:
 
-```
+```Java
 import java.util.Scanner; // Importação obrigatória da classe
 
 public class LeituraDadosConsole {
@@ -1261,7 +1261,7 @@ public class HerancaTeste {
 
 No Java, todas as classes são filhas da classe `Object`, e essa classe padrão fornece um método chamado `toString()`. Quando você tenta imprimir uma variável de referência de um objeto diretamente, o comportamento padrão desse método é retornar o nome do pacote, o nome da classe e uma representação do endereço de memória (hashcode). Para que a impressão do objeto seja legível para seres humanos e mostre os dados reais dos atributos, é necessário **sobrescrever** o método `toString()` dentro da sua classe, alterando o seu comportamento. Ao fazer a sobrescrita, você deve utilizar a anotação `@Override` para garantir a segurança da operação e seguir regras rígidas: o nome, a quantidade de parâmetros e o tipo de retorno devem ser os mesmos, e o modificador de acesso não pode ser mais restritivo do que o original (público).
 
-```
+```Java
 public class Anime {
     private String nome;
     private int episodios;
@@ -1296,7 +1296,7 @@ O modificador `final` é utilizado para definir constantes e limitar a herança 
 - **Classes:** Uma classe marcada como `final` **não pode ser estendida** por nenhuma outra classe, bloqueando completamente a herança. A classe `String` do Java é um exemplo de classe final, garantindo que seu comportamento não seja modificado por terceiros.
 - **Métodos:** Um método marcado como `final` em uma superclasse **não pode ser sobrescrito** por suas subclasses, garantindo que aquele comportamento específico seja mantido inalterado em toda a hierarquia.
 
-```
+```Java
 // 1. Classe Final: Nenhuma classe pode dar 'extends' nela
 public final class ConfiguracaoSistema {
 
@@ -1328,7 +1328,7 @@ As enumerações (`enum`) são um tipo especial de classe utilizadas para **for�
 - **Sobrescrita de Métodos:** Enums permitem a criação de métodos abstratos que **obrigam cada constante da enumeração a prover a sua própria implementação específica** (ex: um cálculo de desconto diferente para débito e crédito).
 - **Buscas:** É possível criar métodos estáticos dentro do `enum` para buscar uma constante específica baseada em um de seus atributos. O Java também disponibiliza o método `values()` que retorna um array com todos os tipos da enumeração, facilitando a iteração para buscas.
 
-```
+```Java
 public enum TipoPagamento {
     // Constantes chamando o construtor implicitamente
     DEBITO(1, "Cartão de Débito") {
